@@ -1,6 +1,6 @@
-# Lottie Renderer & Converter
+# Lottie アニメーション変換ツール
 
-Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JSON アニメーションを透過付きの webp/apng/webm/gif に変換するツールです。
+Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JSON アニメーションを透過付きの WebP/APNG/WebM/GIF/MP4 に変換するツールです。
 
 ---
 
@@ -90,11 +90,13 @@ npm run mp4 animation.json
 #### フォーマットの選択
 
 **WebP をお勧めする場合**:
+
 - **Web サイト**: ブラウザでの表示に最適化されており、透過性とファイルサイズのバランスが良い
 - **Adobe Premiere Pro**: WebP アニメーションを直接インポート可能（透過性を保持）
 - **DaVinci Resolve**: WebP アニメーションを直接インポート可能（透過性を保持）
 
 その他のフォーマット:
+
 - **GIF**: 広くサポートされているが、ファイルサイズが大きい
 - **APNG**: 透過性を保持するが、ブラウザサポートが限定的
 - **WebM**: 高品質だが、一部の環境でサポートが限定的
