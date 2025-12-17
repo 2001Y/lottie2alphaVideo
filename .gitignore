@@ -21,12 +21,12 @@ _1_inputLottie/
 !_1_inputLottie/.gitkeep
 
 # 出力ディレクトリ（レンダリング済みPNGフレーム）
-_1_renderPNG/
-!_1_renderPNG/.gitkeep
+_2_renderPNG/
+!_2_renderPNG/.gitkeep
 
 # 出力ディレクトリ（変換済み動画ファイル）
-_2_convertVideo/
-!_2_convertVideo/.gitkeep
+_3_convertVideo/
+!_3_convertVideo/.gitkeep
 
 # 生成された動画・画像ファイル
 *.mp4

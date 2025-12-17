@@ -10,7 +10,7 @@
     "webm": "node convert.js webm",
     "webp": "node convert.js webp",
     "mp4": "node convert.js mp4",
-    "clean": "rm -rf _1_renderPNG/*/frame_* _1_renderPNG/*/palette.png _2_convertVideo/palette.png"
+    "clean": "rm -rf _2_renderPNG/*/frame_* _2_renderPNG/*/palette.png _3_convertVideo/palette.png"
   },
   "author": "2001Y",
   "license": "MIT",

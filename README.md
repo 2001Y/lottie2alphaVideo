@@ -25,10 +25,10 @@ Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JS
 - **`_1_inputLottie/`**  
   Lottie JSON ファイルの入力ディレクトリ。変換対象の Lottie アニメーションファイルを配置します（任意）。
 
-- **`_1_renderPNG/`**  
+- **`_2_renderPNG/`**  
   レンダリングされた各フレームの PNG 画像を保存するディレクトリ。`render_frames.js`によって`frame_0000.png`、`frame_0001.png`などの形式で保存されます。
 
-- **`_2_convertVideo/`**  
+- **`_3_convertVideo/`**  
   最終的なアニメーションファイル（GIF、APNG、WebP、WebM、MP4）の出力ディレクトリ。変換コマンド実行後に生成されたファイルが保存されます。
 
 - **`node_modules/`**  
@@ -90,7 +90,7 @@ npm run webm
 npm run mp4
 ```
 
-結果は`_2_convertVideo/`ディレクトリに各ファイル名で保存されます。
+結果は`_3_convertVideo/`ディレクトリに各ファイル名で保存されます。
 
 #### ファイルパスを指定した場合
 
@@ -102,7 +102,7 @@ npm run webm animation.json
 npm run mp4 animation.json
 ```
 
-指定したファイルと同じディレクトリに、ファイル名と同じ名前で出力されます。フレーム画像は指定ファイルと同じディレクトリ内の`_1_renderPNG/`に保存されます。
+指定したファイルと同じディレクトリに、ファイル名と同じ名前で出力されます。フレーム画像は指定ファイルと同じディレクトリ内の`_2_renderPNG/`に保存されます。
 
 #### オプション
 

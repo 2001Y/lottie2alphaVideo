@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 const lottieJsonPath = process.argv[2];
-const framesDir = process.argv[3] || '_1_renderPNG'; // 出力先ディレクトリ（オプション）
+const framesDir = process.argv[3] || '_2_renderPNG'; // 出力先ディレクトリ（オプション）
 
 // 引数のパース（--widthオプション、--disable-gpuオプション、--extendオプション、--fpsオプションを検出）
 let width = null;

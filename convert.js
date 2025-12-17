@@ -81,14 +81,14 @@ async function processFile(filePath) {
     const inputBaseName = path.basename(filePath, path.extname(filePath));
     fileOutputDir = inputDir;
     // 各ファイルごとに専用のフレームディレクトリを作成（並行処理時の衝突を防ぐ）
-    fileFramesDir = path.join(inputDir, "_1_renderPNG", inputBaseName);
+    fileFramesDir = path.join(inputDir, "_2_renderPNG", inputBaseName);
     fileOutputFile = path.join(fileOutputDir, `${inputBaseName}.${format}`);
   } else {
-    // 引数なしの場合、_2_convertVideoに出力
+    // 引数なしの場合、_3_convertVideoに出力
     const inputBaseName = path.basename(filePath, path.extname(filePath));
-    fileOutputDir = "_2_convertVideo";
+    fileOutputDir = "_3_convertVideo";
     // 各ファイルごとに専用のフレームディレクトリを作成（並行処理時の衝突を防ぐ）
-    fileFramesDir = path.join("_1_renderPNG", inputBaseName);
+    fileFramesDir = path.join("_2_renderPNG", inputBaseName);
     fileOutputFile = path.join(fileOutputDir, `${inputBaseName}.${format}`);
   }
 
@@ -234,8 +234,8 @@ function cleanupFramesDirs(framesDirs) {
     }
   }
   
-  // _1_renderPNGディレクトリ内のすべてのサブディレクトリとファイルを削除
-  const mainRenderDir = "_1_renderPNG";
+  // _2_renderPNGディレクトリ内のすべてのサブディレクトリとファイルを削除
+  const mainRenderDir = "_2_renderPNG";
   if (fs.existsSync(mainRenderDir)) {
     try {
       const items = fs.readdirSync(mainRenderDir);
