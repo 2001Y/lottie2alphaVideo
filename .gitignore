@@ -24,6 +24,14 @@ _1_renderPNG/
 _2_convertVideo/
 !_2_convertVideo/.gitkeep
 
+# 生成された動画・画像ファイル
+*.mp4
+*.webp
+*.gif
+*.apng
+*.webm
+!**/node_modules/**
+
 # macOS
 .DS_Store
 .AppleDouble
