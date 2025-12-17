@@ -14,12 +14,6 @@ Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JS
 - **`convert.js`**  
   変換処理を統合するスクリプト。レンダリングと変換を自動的に実行します。引数なしの場合は`_1_inputLottie`内の全ファイルを処理し、引数でファイルパスを指定した場合はそのファイルと同じディレクトリに出力します。
 
-- **`package.json`**  
-  プロジェクトの依存関係と npm スクリプトを定義します。主要な依存パッケージ（lottie-web、puppeteer）と、変換用のコマンド（gif、apng、webp、webm、mp4）を管理します。
-
-- **`LICENSE`**  
-  MIT ライセンスのライセンスファイルです。
-
 ### ディレクトリ
 
 - **`_1_inputLottie/`**  
@@ -30,9 +24,6 @@ Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JS
 
 - **`_3_convertVideo/`**  
   最終的なアニメーションファイル（GIF、APNG、WebP、WebM、MP4）の出力ディレクトリ。変換コマンド実行後に生成されたファイルが保存されます。
-
-- **`node_modules/`**  
-  npm によってインストールされた依存パッケージが格納されるディレクトリ。
 
 ---
 
