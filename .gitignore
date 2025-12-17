@@ -1,41 +1,66 @@
-output/*
-!output/.gitkeep
-frames/*
-!frames/.gitkeep
-AnimatedSticker*
-ffmpeg
-sticker.json
+# 依存関係
+node_modules/
+jspm_packages/
 
-# Logs
+# ログファイル
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .pnpm-debug.log*
 
-# Runtime data
+# ランタイムデータ
 pids
 *.pid
 *.seed
 *.pid.lock
 
-# Dependency directories
-node_modules/
-jspm_packages/
+# 出力ディレクトリ（レンダリング済みPNGフレーム）
+_1_renderPNG/
+!_1_renderPNG/.gitkeep
 
-# Optional npm cache directory
+# 出力ディレクトリ（変換済み動画ファイル）
+_2_convertVideo/
+!_2_convertVideo/.gitkeep
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# npm
 .npm
-
-# Optional REPL history
-.node_repl_history
-
-# Output of 'npm pack'
 *.tgz
 
-# parcel-bundler cache (https://parceljs.org/)
+# 一時ファイル
+*.tmp
+*.temp
 .cache
 
-# Stores VSCode versions used for testing VSCode extensions
-.vscode-test
+# 環境変数ファイル
+.env
+.env.local
+.env.*.local
 
-# yarn v2
-.pnp.*
+# テストカバレッジ
+coverage/
+.nyc_output/
+
+# ビルド出力
+dist/
+build/
+*.tsbuildinfo
