@@ -127,31 +127,31 @@ async function processFile(filePath) {
       // 各ファイルごとに専用のpalette.pngを作成（並行処理時の衝突を防ぐ）
       const paletteFile = path.join(fileFramesDir, "palette.png");
       await execAsync(
-        `ffmpeg -y -threads 0 -i ${framePattern} -filter_complex "[0:v]palettegen" "${paletteFile}" && ffmpeg -y -threads 0 -framerate ${fps} -i ${framePattern} -i "${paletteFile}" -filter_complex "[0:v][1:v]paletteuse" "${fileOutputFile}"`
+        `ffmpeg -y -threads 0 -i "${framePattern}" -filter_complex "[0:v]palettegen" "${paletteFile}" && ffmpeg -y -threads 0 -framerate ${fps} -i "${framePattern}" -i "${paletteFile}" -filter_complex "[0:v][1:v]paletteuse" "${fileOutputFile}"`
       );
       break;
     case "apng":
       await execAsync(
-        `ffmpeg -y -threads 0 -framerate ${fps} -i ${framePattern} -plays 0 -c:v apng "${fileOutputFile}"`
+        `ffmpeg -y -threads 0 -framerate ${fps} -i "${framePattern}" -plays 0 -c:v apng "${fileOutputFile}"`
       );
       break;
     case "webm":
       await execAsync(
-        `ffmpeg -y -threads 0 -framerate ${fps} -i ${framePattern} -c:v libvpx-vp9 -lossless 1 -pix_fmt yuva420p -auto-alt-ref 0 -row-mt 1 -deadline realtime "${fileOutputFile}"`
+        `ffmpeg -y -threads 0 -framerate ${fps} -i "${framePattern}" -c:v libvpx-vp9 -lossless 1 -pix_fmt yuva420p -auto-alt-ref 0 -row-mt 1 -deadline realtime "${fileOutputFile}"`
       );
       break;
     case "webp":
       // img2webpの-dオプションはミリ秒単位（1000/fps）
       const delayMs = Math.round(1000 / fps);
       await execAsync(
-        `img2webp -lossless -loop 0 -d ${delayMs} ${framePatternWildcard} -o "${fileOutputFile}"`
+        `img2webp -lossless -loop 0 -d ${delayMs} "${framePatternWildcard}" -o "${fileOutputFile}"`
       );
       break;
     case "mp4":
       // ハードウェアアクセラレーション（VideoToolbox）を使用
       // VideoToolboxでは-b:v 0が使えないため、適切なビットレートを指定
       await execAsync(
-        `ffmpeg -y -threads 0 -framerate ${fps} -i ${framePattern} -c:v h264_videotoolbox -b:v 10M -pix_fmt yuv420p "${fileOutputFile}"`
+        `ffmpeg -y -threads 0 -framerate ${fps} -i "${framePattern}" -c:v h264_videotoolbox -b:v 10M -pix_fmt yuv420p "${fileOutputFile}"`
       );
       break;
     default:
