@@ -142,9 +142,16 @@ async function processFile(filePath) {
       break;
     case "webp":
       // img2webpの-dオプションはミリ秒単位（1000/fps）
+      // img2webpはワイルドカードをサポートしていないため、ファイルリストを取得して個別に渡す
       const delayMs = Math.round(1000 / fps);
+      const frameFiles = fs.readdirSync(fileFramesDir)
+        .filter(f => f.startsWith('frame_') && f.endsWith('.png'))
+        .sort()
+        .map(f => path.join(fileFramesDir, f))
+        .map(f => `"${f}"`)
+        .join(' ');
       await execAsync(
-        `img2webp -lossless -loop 0 -d ${delayMs} "${framePatternWildcard}" -o "${fileOutputFile}"`
+        `img2webp -lossless -loop 0 -d ${delayMs} ${frameFiles} -o "${fileOutputFile}"`
       );
       break;
     case "mp4":
