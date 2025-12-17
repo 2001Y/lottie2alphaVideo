@@ -41,16 +41,8 @@ Node.js と Puppeteer を使用して、[Lottie](https://airbnb.io/lottie/#/) JS
 ### 1. リポジトリのクローンとフォルダへの移動
 
 ```bash
-git clone https://github.com/Mr-Precise/lottie-converter
-cd lottie-converter
-```
-
-または ZIP ファイルをダウンロード
-
-```bash
-wget https://github.com/Mr-Precise/lottie-converter/archive/refs/heads/main.zip
-unzip main.zip
-cd lottie-converter
+git clone https://github.com/2001Y/lottie2alphaVideo.git
+cd lottie2alphaVideo
 ```
 
 ### 2. 依存関係のインストール
