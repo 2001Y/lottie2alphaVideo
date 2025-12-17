@@ -1,0 +1,24 @@
+{
+  "name": "lottie-converter",
+  "version": "1.0.0",
+  "description": "Converts Lottie JSON animations to webp/apng/webm/gif with transparency",
+  "main": "render_frames.js",
+  "type": "module",
+  "scripts": {
+    "gif": "node convert.js gif",
+    "apng": "node convert.js apng",
+    "webm": "node convert.js webm",
+    "webp": "node convert.js webp",
+    "mp4": "node convert.js mp4",
+    "clean": "rm -rf _1_renderPNG/*/frame_* _1_renderPNG/*/palette.png _2_convertVideo/palette.png"
+  },
+  "author": "2001Y",
+  "license": "MIT",
+  "dependencies": {
+    "lottie-web": "^5.13.0",
+    "puppeteer": "^24.33.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
