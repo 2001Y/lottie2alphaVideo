@@ -16,6 +16,10 @@ pids
 *.seed
 *.pid.lock
 
+# 入力ディレクトリ（ユーザーのLottieファイル）
+_1_inputLottie/
+!_1_inputLottie/.gitkeep
+
 # 出力ディレクトリ（レンダリング済みPNGフレーム）
 _1_renderPNG/
 !_1_renderPNG/.gitkeep
